@@ -165,9 +165,55 @@
 											</div>
                                             <hr>
 										</div>
-										<ul class="actions">
-											<li><a href="#" class="button">Submit Score</a></li>
-										</ul>
+										<div class="login-box">
+											<form action="https://sheetdb.io/api/v1/69kvuydqzi9bu" method="post" id="sheetdb-form">
+												<div class="user-box">
+													<input type="text" placeholder="Enter name of panel" name="data[Panel]" required="Please enter your name.">
+												</div>
+												<br>
+												<div class="hide" id="hide">
+													<div>
+														<input type="text" value="Murthi et al." name="data[Group]">
+													</div>
+													<div>
+														<input type="text" id="txtInput1" name="data[Content]">
+													</div>
+													<div>
+														<input type="text" id="txtInput2" name="data[Organization]">
+													</div>
+													<div>
+														<input type="text" id="txtInput3" name="data[Delivery]">
+													</div>
+													<div>
+														<input type="text" id="txtInput4" name="data[Presentation]">
+													</div>
+													<div>
+														<input type="text" id="txtInput5" name="data[Time Management]">
+													</div>
+													<div>
+														<input type="text" id="txtInput6" name="data[Team Work]">
+													</div>
+													<div>
+														<input type="text" id="txtInput7" name="data[Audience Impact]">
+													</div>
+													<div>
+														<input type="text" id="txtInput8" name="data[Murthi]">
+													</div>
+													<div>
+														<input type="text" id="txtInput9" name="data[Raj]">
+													</div>
+													<div>
+														<input type="text" id="txtInput10" name="data[Aravindar]">
+													</div>
+													<div>
+														<input type="text" id="txtInput11" name="data[Vijay]">
+													</div>
+												</div>
+											  	<ul class="actions">
+													<li><button type="submit">Submit Score</button></li>
+												</ul>
+											</form>
+										</div>
                                 </section>
                         </div>
                     </div>
@@ -197,6 +243,21 @@
 			</div>
 
 		<!-- Scripts -->
+		<script>
+            var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('330_tnx.html', '_self');
+          });
+        });
+        </script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
